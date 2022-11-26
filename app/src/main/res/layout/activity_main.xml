@@ -298,7 +298,7 @@
         app:layout_constraintTop_toTopOf="@+id/smallViewPlayer2" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/new_game"

@@ -19,11 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //selecting starting player
-        selectStartingPlayer()
+        //first state of the game
+        resetGame()
         //button working
-        binding.button3.visibility = View.INVISIBLE
-        binding.button3.isClickable = false
         binding.ZeroZero.setOnClickListener {
             callChangeButton(binding.ZeroZero)
         }
@@ -52,10 +50,8 @@ class MainActivity : AppCompatActivity() {
             callChangeButton(binding.TwoTwo)
         }
         //reset button
-        binding.button3.setOnClickListener {
-            finish()
-            val i = Intent(this, MainActivity::class.java)
-            startActivity(i)
+        binding.buttonReset.setOnClickListener {
+            resetGame()
         }
     }
 
@@ -72,8 +68,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun makeInvisible(x: Int, y: Int) {
-        Log.v("MainActivity","Its X from MakeInvisible $x")
-        Log.v("MainActivity","Its Y from MakeInvisible $y")
+        Log.v("MainActivity", "Its X from MakeInvisible $x")
+        Log.v("MainActivity", "Its Y from MakeInvisible $y")
         binding.player2Activated.visibility = x
         binding.player1Activated.visibility = y
     }
@@ -85,7 +81,7 @@ class MainActivity : AppCompatActivity() {
             changeButton("X", 2, button)
             makeInvisible(View.VISIBLE, View.INVISIBLE)
         } else {
-            binding.result.text =getString(R.string.player_1)
+            binding.result.text = getString(R.string.player_1)
             changeButton("O", 1, button)
             makeInvisible(View.INVISIBLE, View.VISIBLE)
         }
@@ -101,14 +97,14 @@ class MainActivity : AppCompatActivity() {
         if (roundCounter == 9) {
             Log.v("MainActivity", "Current Turn Number $roundCounter")
             binding.result.text = getString(R.string.draw)
-            binding.button3.visibility = View.VISIBLE
-            binding.button3.isClickable = true
+            binding.buttonReset.visibility = View.VISIBLE
+            binding.buttonReset.isClickable = true
         }
     }
 
     private fun lockButton() {
-        binding.button3.visibility = View.VISIBLE
-        binding.button3.isClickable = true
+        binding.buttonReset.visibility = View.VISIBLE
+        binding.buttonReset.isClickable = true
         changeButton("-", playerSelector, binding.ZeroZero)
         changeButton("-", playerSelector, binding.ZeroOne)
         changeButton("-", playerSelector, binding.ZeroTwo)
@@ -121,12 +117,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun changeButton(CrossOrZero: String, PlayerNo: Int, button: Button) {
-
-        if(button.isClickable){
+        if (button.isClickable) {
             button.isClickable = false
             button.text = CrossOrZero
             playerSelector = PlayerNo
         }
+    }
+
+    private fun resetButton(button: Button) {
+        button.isClickable = true
+        button.text = ""
     }
 
     private fun winningLogic(value: String): String {
@@ -147,5 +147,22 @@ class MainActivity : AppCompatActivity() {
         } else if (binding.ZeroTwo.text == value && binding.OneOne.text == value && binding.TwoZero.text == value) {
             return value
         } else return "Continue"
+    }
+
+    private fun resetGame() {
+        playerSelector = 1
+        roundCounter = 0
+        selectStartingPlayer()
+        binding.buttonReset.visibility = View.INVISIBLE
+        binding.buttonReset.isClickable = false
+        resetButton(binding.ZeroZero)
+        resetButton(binding.ZeroOne)
+        resetButton(binding.ZeroTwo)
+        resetButton(binding.OneZero)
+        resetButton(binding.OneOne)
+        resetButton(binding.OneTwo)
+        resetButton(binding.TwoZero)
+        resetButton(binding.TwoOne)
+        resetButton(binding.TwoTwo)
     }
 }
