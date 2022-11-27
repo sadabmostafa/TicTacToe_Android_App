@@ -8,8 +8,8 @@
 
     <View
         android:id="@+id/player2Activated"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="115dp"
+        android:layout_height="95dp"
         android:background="@drawable/box"
         app:layout_constraintBottom_toBottomOf="@+id/smallViewPlayer2"
         app:layout_constraintEnd_toEndOf="@+id/smallViewPlayer2"
@@ -17,17 +17,18 @@
         app:layout_constraintTop_toTopOf="@+id/smallViewPlayer2" />
     <View
         android:id="@+id/player1Activated"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="115dp"
+        android:layout_height="95dp"
         android:background="@drawable/box"
         app:layout_constraintBottom_toBottomOf="@+id/smallViewPlayer1"
         app:layout_constraintEnd_toEndOf="@+id/smallViewPlayer1"
         app:layout_constraintStart_toStartOf="@+id/smallViewPlayer1"
         app:layout_constraintTop_toTopOf="@+id/smallViewPlayer1" />
+
     <View
         android:id="@+id/smallViewPlayer1"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
         android:layout_marginStart="10dp"
         android:background="@drawable/smallbox"
         app:layout_constraintStart_toStartOf="@+id/view"
@@ -35,8 +36,8 @@
 
     <View
         android:id="@+id/smallSmallViewPlayer1"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/box"
         app:layout_constraintBottom_toBottomOf="@+id/smallViewPlayer1"
@@ -44,19 +45,29 @@
         app:layout_constraintStart_toStartOf="@+id/smallViewPlayer1" />
 
     <View
+        android:id="@+id/circleForRound"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@+id/player1Activated"
+        app:layout_constraintEnd_toStartOf="@+id/smallViewPlayer2"
+        app:layout_constraintStart_toEndOf="@+id/smallViewPlayer1"
+        app:layout_constraintTop_toTopOf="@+id/player1Activated" />
+
+    <View
         android:id="@+id/smallViewPlayer2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="70dp"
         android:background="@drawable/smallbox"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view" />
 
     <View
         android:id="@+id/smallSmallViewPlayer2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/box"
         app:layout_constraintBottom_toBottomOf="@+id/smallViewPlayer2"
@@ -67,12 +78,12 @@
         android:id="@+id/view"
         android:layout_width="350dp"
         android:layout_height="350dp"
-        android:layout_marginBottom="120dp"
         android:background="@drawable/box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view3"
@@ -251,7 +262,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/xSymbol"
-        android:textSize="60sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/smallSmallViewPlayer1"
@@ -263,7 +274,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/oSymbol"
-        android:textSize="70sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         tools:layout_editor_absoluteX="262dp"
@@ -277,7 +288,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/player_1"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/smallSmallViewPlayer1"
         app:layout_constraintEnd_toEndOf="@+id/smallViewPlayer1"
@@ -288,7 +299,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/player_2"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="239dp"
         tools:layout_editor_absoluteY="94dp"
@@ -297,30 +308,41 @@
         app:layout_constraintStart_toStartOf="@+id/smallViewPlayer2"
         app:layout_constraintTop_toTopOf="@+id/smallViewPlayer2" />
 
-    <Button
-        android:id="@+id/buttonReset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/new_game"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        tools:ignore="TextContrastCheck" />
+
 
     <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        tools:text="hello"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
         android:background="@drawable/smallbox"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text=""
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/player1Activated"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        tools:text="hello" />
+
+    <TextView
+        android:id="@+id/roundShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:lines="2"
+        android:minLines="2"
+        android:singleLine="false"
+        app:layout_constraintBottom_toBottomOf="@+id/circleForRound"
+        app:layout_constraintEnd_toEndOf="@+id/circleForRound"
+        app:layout_constraintStart_toStartOf="@+id/circleForRound"
+        app:layout_constraintTop_toTopOf="@+id/circleForRound"
+        android:textAlignment="center"
+        tools:text="4th \nround" />
 </androidx.constraintlayout.widget.ConstraintLayout>
