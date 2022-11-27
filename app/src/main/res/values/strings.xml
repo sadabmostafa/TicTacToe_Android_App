@@ -7,4 +7,6 @@
     <string name="player_2">Player 2</string>
     <string name="new_game">New Game</string>
     <string name="whoWon">Player %1$s won!!!</string>
+    <string name="round">%1$s%2$s \nRound</string>
+    <string name="playerToast">Hi Player %1$s!!!</string>
 </resources>
