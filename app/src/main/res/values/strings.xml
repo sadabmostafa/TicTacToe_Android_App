@@ -3,7 +3,7 @@
     <string name="xSymbol">X</string>
     <string name="oSymbol">O</string>
     <string name="player_1">Player 1</string>
-    <string name="draw">Draw!!!</string>
+    <string name="draw">Its a Draw!!!</string>
     <string name="player_2">Player 2</string>
     <string name="new_game">New Game</string>
     <string name="whoWon">Player %1$s won!!!</string>

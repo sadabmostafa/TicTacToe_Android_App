@@ -31,7 +31,7 @@ class ResultScreen : AppCompatActivity() {
             else -> {
                 binding.imageView2.visibility = View.INVISIBLE
                 binding.imageView.setImageResource(R.drawable.neutral)
-                binding.congo.text="Its a Draw"
+                binding.congo.text=getString(R.string.draw)
                 binding.won.text=""
             }
         }

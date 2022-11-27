@@ -1,5 +1,6 @@
 package com.sadabmostafa.fridayproject
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ class StartingScreen : AppCompatActivity() {
         setContentView(R.layout.activity_starting_screen)
         binding = ActivityStartingScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val something = getSharedPreferences("Score",Context.MODE_PRIVATE)
         binding.singlePlayer.setOnClickListener{
             val intent = Intent(this,MainActivity::class.java)
             finish()
