@@ -7,10 +7,10 @@
     tools:context=".ResultScreen">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/winingStatus"
         android:layout_width="245dp"
         android:layout_height="207dp"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,11 +19,11 @@
         tools:ignore="ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/crown"
         android:layout_width="125dp"
         android:layout_height="111dp"
-        android:contentDescription="TODO"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/winingStatus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -42,27 +42,27 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/crown" />
 
     <TextView
-        android:id="@+id/congo"
+        android:id="@+id/congratulations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:text="Congratulations!"
+        android:text="@string/congratulations"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/backToHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/winingStatus" />
 
     <Button
         android:id="@+id/backToHome"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
-        android:text="Home"
+        android:text="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/playAgain"
         app:layout_constraintStart_toStartOf="parent" />
@@ -72,20 +72,20 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="Play Again"
+        android:text="@string/play_again"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/backToHome"
         app:layout_constraintTop_toTopOf="@+id/backToHome" />
 
     <TextView
-        android:id="@+id/won"
+        android:id="@+id/wonStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
-        android:text="You won the match"
+        android:text="@string/you_won_the_match"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/congo"
-        app:layout_constraintStart_toStartOf="@+id/congo"
-        app:layout_constraintTop_toBottomOf="@+id/congo" />
+        app:layout_constraintEnd_toEndOf="@+id/congratulations"
+        app:layout_constraintStart_toStartOf="@+id/congratulations"
+        app:layout_constraintTop_toBottomOf="@+id/congratulations" />
 </androidx.constraintlayout.widget.ConstraintLayout>

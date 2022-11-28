@@ -9,4 +9,9 @@
     <string name="whoWon">Player %1$s won!!!</string>
     <string name="round">%1$s%2$s \nRound</string>
     <string name="playerToast">Hi Player %1$s!!!</string>
+    <string name="todo">TODO</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="home">Home</string>
+    <string name="you_won_the_match">You won the match</string>
+    <string name="play_again">Play Again</string>
 </resources>

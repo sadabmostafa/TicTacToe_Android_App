@@ -10,7 +10,6 @@ class ResultScreen : AppCompatActivity() {
     private lateinit var binding: ActivityResultScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_result_screen)
         binding = ActivityResultScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //creating intent for going to that activity
@@ -29,10 +28,10 @@ class ResultScreen : AppCompatActivity() {
                 binding.result.text = getString(R.string.playerToast, "two")
             }
             else -> {
-                binding.imageView2.visibility = View.INVISIBLE
-                binding.imageView.setImageResource(R.drawable.neutral)
-                binding.congo.text=getString(R.string.draw)
-                binding.won.text=""
+                binding.crown.visibility = View.INVISIBLE
+                binding.winingStatus.setImageResource(R.drawable.neutral)
+                binding.congratulations.text=getString(R.string.draw)
+                binding.wonStatus.text=""
             }
         }
         binding.backToHome.setOnClickListener{
@@ -40,8 +39,8 @@ class ResultScreen : AppCompatActivity() {
             startActivity(home)
         }
         binding.playAgain.setOnClickListener{
-            startActivity(game)
             finish()
+            startActivity(game)
         }
 
     }
